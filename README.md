@@ -1,25 +1,26 @@
-# Содержание
-+ [Доступ снаружи через Winbox](A1)
-+ [Доступ снаружи через SSH](A2)
-+ [Доступ снаружи только определенным IP адресам](A3)
-
-[A1]: # Доступ снаружи через Winbox
+<h1 id="A0">Содержание</h1>
+<ol>
+<li><a href="A1">Доступ снаружи через Winbox</a></li>
+<li><a href="A2">Доступ снаружи через SSH</a></li>
+<li><a href="A3">Доступ снаружи только определенным IP адресам</a></li>
+</ol>
+<h1 id="A1" align="center">Доступ снаружи через Winbox</h1>
 
 Чтобы подключиться к Микротику через Winbox, нужно в firewall открыть порт 8291. Перейдем IP => Firewall => Filter Rules и нажмем “+”:
 
-<img src="supplementary_files/1.png" alt="альтернативный текст">
-
-![Image alt](supplementary_files/2.png "general view")​
-
-![Image alt](supplementary_files/3.png "general view")​
+<p align="center"><img src="supplementary_files/1.png" width="800"></p>
+</br>
+<p align="center"><img src="supplementary_files/2.png" width="800"></p>​
+</br>
+<p align="center"><img src="supplementary_files/3.png" width="800"></p>​
 
 Разместим созданное правило выше запрещающего:
 
-![Image alt](supplementary_files/4.png "general view")​
+<p align="center"><img src="supplementary_files/4.png" width="800"></p>​
 
 Таким образом, подключение к Mikrotik из интернета через Winbox разрешено. Данный способ позволяет удаленно настраивать оборудование в графическом режиме.
 
-# Доступ снаружи через SSH [A2]:
+<h1 id="A1" align="center">Доступ снаружи через SSH</h1>
 
 Также удаленное подключение до Mikrotik можно осуществить, используя протокол SSH, настроить и выполнить диагностику устройства из командной строки. Чтобы настроить Mikrotik для удаленного подключения из интернета по протоколу SSH, нужно открыть 22 port. Делается это аналогично настройке доступа через Winbox. Поэтому мы просто скопируем ранее созданное правило, изменив порт:
 
@@ -31,7 +32,7 @@
 
 Разместим его выше блокирующего правила.
 
-# Доступ снаружи только определенным IP адресам [A3]:
+<h1 id="A1" align="center">Доступ снаружи только определенным IP адресам</h1>
 
 Откроем IP => Services:
 
