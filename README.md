@@ -3,12 +3,11 @@
 + [Доступ снаружи через SSH](A2)
 + [Доступ снаружи только определенным IP адресам](A3)
 
-<a name="A1"></a> 
-# Доступ снаружи через Winbox
+[A1]: # Доступ снаружи через Winbox
 
 Чтобы подключиться к Микротику через Winbox, нужно в firewall открыть порт 8291. Перейдем IP => Firewall => Filter Rules и нажмем “+”:
 
-![Image alt](supplementary_files/1.png "general view")​
+<img src="supplementary_files/1.png" alt="альтернативный текст">
 
 ![Image alt](supplementary_files/2.png "general view")​
 
