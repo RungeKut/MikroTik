@@ -49,3 +49,16 @@
 + Port: 8291 – номер порта, который использует сервис. При желании можем указать свой;
 + Available From: 192.168.13.0/24 – разрешаем подключение из локальной сети;
 + 1.1.1.1 – вместо этого указываем IP-адрес с которого будем подключаться к оборудованию.
+
+# Source
++ [Настройка DNS Server на MikroTik](https://smartadm.ru/nastrojka-dns-server-na-mikrotik/)
++ [Базовая настройка фаервола в Микротик](https://system-administrators.info/?p=7261)
++ [Настройка MikroTik L2TP Server + IPSec](https://smartadm.ru/mikrotik-l2tp-server-ipsec/)
++ [Выбираем логин на Яндекс.Почте](https://habr.com/ru/post/582816/)
++ [Встречаем сервис от Cloudflare](https://habr.com/ru/post/352654/)
++ [Настраиваем использование DNS over HTTPS (DoH)](https://interface31.ru/tech_it/2021/01/nastraivaem-ispolzovanie-dns-over-https-doh-na-routerah-mikrotik.html)
++ [Настройка почты и отправка письма по событию](https://smartadm.ru/mikrotik-nastrojka-pochty/)
++ [Правильная настройка безопасности роутера](https://smartadm.ru/mikrotik-nastrojka-firewall/)
++ [Расширенная настройка DNS и DHCP в роутерах Mikrotik](https://interface31.ru/tech_it/2019/05/rasshirennaya-nastroyka-dns-i-dhcp-v-routerah-mikrotik.html)
++ []()
++ []()
