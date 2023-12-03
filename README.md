@@ -1,6 +1,7 @@
 <h1 id="A0">Содержание</h1>
 <ol>
   <li><a href="A4">Сброс к заводским настройкам</a></li>
+  <li><a href="A5">Настройка VPN</a></li>
   <li><a href="A1">Доступ снаружи через Winbox</a></li>
   <li><a href="A2">Доступ снаружи через SSH</a></li>
   <li><a href="A3">Доступ снаружи только определенным IP адресам</a></li>
@@ -17,6 +18,8 @@
 + Wifi имя сети: MikroTik-C963D4 открытая
 + login: admin
 + password: пустое поле
+
+<h1 id="A5" align="center">Настройка VPN</h1>
 
 <h1 id="A1" align="center">Доступ снаружи через Winbox</h1>
 
