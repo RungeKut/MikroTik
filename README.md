@@ -7,7 +7,7 @@
   <li><a href="#Доступ-снаружи-только-определенным-IP-адресам">Доступ снаружи только определенным IP адресам</a></li>
 </ol>
 
-<h1 align="center">Сброс к заводским настройкам</h1>
+# Сброс к заводским настройкам
 
 + Нужно выключить питание.
 + Нажать кнопку Reset а роутере
@@ -20,32 +20,36 @@
 + login: admin
 + password: пустое поле
 
-<h1 align="center">Настройка VPN</h1>
+# SSL Сертификат для субдомена
+
+/certificate enable-ssl-certificate dns-name=childrenyard.ru
+
+# Настройка VPN
 
 1. IP - Pool / Определям диапазон адресов VPN-пользователей
 
 <p align="center"><img src="supplementary_files/9.png"></p>
 
-2. PPP - Profiles / Профиль для нашего конкретного туннеля
+2. «Связать» пул адресов для клиентов и адрес VPN-сервера можно с помощью PPP-профиля:
 
 <p align="center"><img src="supplementary_files/10.png"></p>
 
 **General:**
-- Name: l2tp_profile
-- Local address: vpn_pool (а можно указать 192.168.88.1, сами смотрите, как вам больше нравится)
-- Remote address: vpn_pool
+- Name: default-encryption — имя профиля, используем уже созданный стандартный для этого дела
+- Local Address: default-dhcp — задаем адрес VPN-сервера в локальной сети
+- Remote address: VPN
+- Bridge Learning: default
 - Change TCP MSS: yes
 
 **Protocols:**
-- all to default:
-- Use MPLS: default
-- Use compression: default
-- Use Encryption: default
-
-Если в сети, куда вы подключаетесь, есть ресурсы по внутренним доменным именам, а не только по IP, можете указать DNS Server этой сети, например, 192.168.88.1 (или какой вам нужен).
+- Use MPLS: no — не используем MultiProtocol Label Switching
+- Use compression: yes — включаем сжатие трафика
+- Use Encryption: yes — включаем шифрование
 
 **Limits:**
-Only one: default
+Only one: no — разрешаем более одного одновременного подключения для пользователя
+
+3. Далее необходимо разрешить клиенту выходить в интернет через VPN-подключение. Для этого необходимо настроить NAT.
 
 3. PPP - Secrets / Готовим пользователя VPN
 
@@ -55,7 +59,11 @@ Only one: default
 
 <p align="center"><img src="supplementary_files/12.png"></p>
 
-<h1 align="center">Доступ снаружи через Winbox</h1>
+5. Переходим в IP - IPsec - Proposal и приводим набор настроек default к следующему виду: Auth. Algorithms - sha1, sha256, Encr. Algorithms - aes-128-cbc, aes-192-cbc, aes-256-cbc, PFS Group - ecp384.
+
+<p align="center"><img src="supplementary_files/13.png"></p>
+
+# Доступ снаружи через Winbox
 
 Чтобы подключиться к Микротику через Winbox, нужно в firewall открыть порт 8291. Перейдем IP => Firewall => Filter Rules и нажмем “+”:
 
@@ -71,7 +79,7 @@ Only one: default
 
 Таким образом, подключение к Mikrotik из интернета через Winbox разрешено. Данный способ позволяет удаленно настраивать оборудование в графическом режиме.
 
-<h1 align="center">Доступ снаружи через SSH</h1>
+# Доступ снаружи через SSH
 
 Также удаленное подключение до Mikrotik можно осуществить, используя протокол SSH, настроить и выполнить диагностику устройства из командной строки. Чтобы настроить Mikrotik для удаленного подключения из интернета по протоколу SSH, нужно открыть 22 port. Делается это аналогично настройке доступа через Winbox. Поэтому мы просто скопируем ранее созданное правило, изменив порт:
 
@@ -83,7 +91,7 @@ Only one: default
 
 Разместим его выше блокирующего правила.
 
-<h1 align="center">Доступ снаружи только определенным IP адресам</h1>
+Доступ снаружи только определенным IP адресам
 
 Откроем IP => Services:
 
